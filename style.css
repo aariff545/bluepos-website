@@ -184,3 +184,10 @@ footer a {
   font-size: 14px;
   color: #cbd5e1;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.link-logo {
+  display: flex;
+}
