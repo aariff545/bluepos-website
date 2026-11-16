@@ -24,15 +24,29 @@ nav a {
   margin-left: 20px;
 }
 
-#tukarBahasa {
+.pilih-bahasa {
+  display: inline-flex;
   margin-left: 20px;
-  background: white;
-  color: #1e40af;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.pilih-bahasa button {
+  background: transparent;
+  color: #94a3b8;
   border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 14px;
+}
+
+.pilih-bahasa button.aktif {
+  background: #2563eb;
+  color: white;
 }
 
 .hero {
