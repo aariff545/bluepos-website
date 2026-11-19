@@ -4,32 +4,73 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #1e293b;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 16px 40px;
   background: #1e40af;
   color: white;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+}
+
+.link-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 36px;
+  background: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  font-size: 15px;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+.nav-login {
+  background: rgba(255, 255, 255, 0.14);
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+}
+
+.nav-login:hover {
+  background: rgba(255, 255, 255, 0.24);
+  opacity: 1;
 }
 
 .pilih-bahasa {
   display: inline-flex;
-  margin-left: 20px;
   background: #0f172a;
   border: 1px solid #334155;
   border-radius: 12px;
@@ -52,124 +93,402 @@ nav a {
   color: white;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: #eff6ff;
+  padding: 88px 20px 80px;
+  background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #ffffff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08);
 }
 
 .hero h1 {
-  font-size: 40px;
-  margin-bottom: 16px;
+  font-size: 42px;
+  line-height: 1.2;
+  max-width: 820px;
+  margin: 0 auto 16px;
+  color: #0f172a;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 30px;
+  color: #475569;
+  max-width: 620px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .butang {
+  display: inline-block;
   background: #1e40af;
   color: white;
   padding: 14px 30px;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 8px 18px rgba(30, 64, 175, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.ciri {
-  padding: 80px 40px;
-  text-align: center;
+.butang:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
 }
 
-.ciri h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.kotak {
-  background: white;
-  border: 1px solid #dbeafe;
-  border-radius: 12px;
-  padding: 24px;
-  text-align: left;
-}
-
-.kotak h3 {
+.butang-sekunder {
+  display: inline-block;
+  background: #ffffff;
   color: #1e40af;
-  margin-bottom: 10px;
-}
-.logo {
-  height: 36px;
-  background: white;
-  padding: 4px 10px;
+  border: 1px solid #93c5fd;
+  padding: 13px 26px;
   border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.butang-sekunder:hover {
+  background: #eff6ff;
 }
 
 .gambar-hero {
   display: block;
-  max-width: 1200px;
+  max-width: 1120px;
   width: 100%;
-  margin: 50px auto 0;
+  margin: 48px auto 0;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
 }
+
+/* Header Seksyen Umum */
+.seksyen-header {
+  max-width: 660px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.label-seksyen {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #bfdbfe;
+  margin-bottom: 12px;
+}
+
+.seksyen-header h2 {
+  font-size: 34px;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.sub-seksyen {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* 1. Bahagian 3 Langkah Cara Mula */
+.langkah-seksyen {
+  padding: 88px 32px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.kad-langkah {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.nombor-langkah {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #1e40af;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.kad-langkah h3 {
+  color: #0f172a;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.kad-langkah p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Bahagian Ciri-ciri */
+.ciri {
+  padding: 90px 32px;
+  background: #ffffff;
+}
+
+.kotak {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 26px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.kotak:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 14px 28px rgba(30, 64, 175, 0.08);
+}
+
+.ikon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ikon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.kotak:hover .ikon {
+  background: #1e40af;
+  color: #ffffff;
+}
+
+.kotak h3 {
+  color: #1e40af;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.kotak p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* 2 & 3. Bahagian Jenis Bisnes & Perkakasan */
+.bisnes-seksyen {
+  padding: 90px 32px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.kad-bisnes {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 26px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kad-bisnes:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.kad-bisnes h3 {
+  color: #0f172a;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.kad-bisnes p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.kotak-perkakasan {
+  max-width: 1120px;
+  margin: 32px auto 0;
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.item-perkakasan {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.ikon-kecil {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ikon-kecil svg {
+  width: 20px;
+  height: 20px;
+}
+
+.item-perkakasan h4 {
+  color: #1e40af;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.item-perkakasan p {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Bahagian Harga */
 .harga {
-  padding: 80px 20px;
+  padding: 86px 20px;
   text-align: center;
   background: #eff6ff;
 }
 
 .harga h2 {
-  font-size: 32px;
+  font-size: 34px;
+  color: #0f172a;
   margin-bottom: 40px;
 }
 
 .kad-harga {
   background: white;
-  max-width: 380px;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 40px 30px;
-  border-radius: 16px;
+  padding: 40px 32px;
+  border-radius: 18px;
   border: 2px solid #1e40af;
+  box-shadow: 0 16px 35px rgba(30, 64, 175, 0.1);
 }
 
 .percuma {
-  color: #16a34a;
+  display: inline-block;
+  background: #dcfce7;
+  color: #15803d;
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 
 .nilai {
-  font-size: 48px;
+  font-size: 50px;
   font-weight: bold;
   color: #1e40af;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .nilai span {
   font-size: 18px;
+  font-weight: normal;
   color: #64748b;
 }
 
 .kad-harga ul {
   list-style: none;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+  text-align: left;
 }
 
 .kad-harga li {
-  padding: 8px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
 }
+
+.kad-harga li::before {
+  content: "✓ ";
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.kad-harga li:last-child {
+  border-bottom: none;
+}
+
+.butang-penuh {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.nota-harga {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Footer */
 footer {
   background: #1e3a8a;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 44px 20px;
+}
+
+footer .logo {
+  margin: 0 auto;
 }
 
 footer p {
@@ -184,33 +503,38 @@ footer a {
   font-size: 14px;
   color: #cbd5e1;
 }
-html {
-  scroll-behavior: smooth;
+
+/* Responsive */
+@media (max-width: 960px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kotak-perkakasan {
+    grid-template-columns: 1fr;
+  }
 }
 
-.link-logo {
-  display: flex;
-}
 @media (max-width: 700px) {
   header {
     padding: 12px 16px;
   }
 
   nav {
-    display: flex;
-    align-items: center;
+    gap: 10px;
   }
 
-  nav a {
+  .nav-link {
     display: none;
+  }
+
+  .nav-login {
+    padding: 6px 10px;
+    font-size: 13px;
   }
 
   .logo {
     height: 30px;
-  }
-
-  .pilih-bahasa {
-    margin-left: 0;
   }
 
   .pilih-bahasa button {
@@ -219,10 +543,18 @@ html {
   }
 
   .hero {
-    padding: 60px 20px;
+    padding: 56px 20px;
   }
 
   .hero h1 {
     font-size: 30px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .kotak-perkakasan {
+    padding: 22px 20px;
   }
 }
